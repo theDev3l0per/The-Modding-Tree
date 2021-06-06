@@ -8,7 +8,7 @@ var layoutInfo = {
     
 }
 
-
+const D = Decimal
 // A "ghost" layer which offsets other layers in the tree
 addNode("blank", {
     layerShown: "ghost",
@@ -17,7 +17,11 @@ addNode("blank", {
 
 
 addLayer("tree-tab", {
-    tabFormat: [["tree", function() {return (layoutInfo.treeLayout ? layoutInfo.treeLayout : TREE_LAYERS)}]],
+    tabFormat: {
+        "Theory": {
+            embedLayer:"t"
+        }
+    },
     previousTab: "",
     leftTab: true,
 })
